@@ -64,7 +64,7 @@ class: thesis-slide
 </div>
 
 <small v-click=5>
-April, 2026. Sources: Have I Been Pwned, Verizon DBIR 2025, Heimdal Security, NordPass 2025.
+April 2026. Sources: Have I Been Pwned, Verizon DBIR 2025, Heimdal Security, NordPass 2025.
 </small>
 
 ---
@@ -75,15 +75,15 @@ April, 2026. Sources: Have I Been Pwned, Verizon DBIR 2025, Heimdal Security, No
 
 - <strong>Password complexity</strong>
   - Minimum length
-  - Digits
-  - Symbol
-  - Mix case
-- <strong>Multi-factor Authentication</strong>
-  - SMS or Email OTP
-  - External Authenticator
+  - Numbers
+  - Symbols
+  - Mixed case
+- <strong>Multi-factor authentication</strong>
+  - SMS or email OTP
+  - Authenticator app
 - <strong>Expiration</strong>
-  - 30d expiration
-  - different from the latest 8
+  - 30-day expiration
+  - Cannot reuse the last 8 passwords
 - <strong>Password managers</strong>
 
 </v-clicks>
@@ -93,7 +93,7 @@ layout: statement
 class: thesis-slide
 ---
 
-<h1 class="green">Passwordless for the win<br />(and security)</h1>
+<h1 class="green">Passwordless for usability<br />and security</h1>
 
 --- 
 layout: section
@@ -160,7 +160,7 @@ class: section-slide
 
 # Credential Management API
 
-## Browser API for different models
+## A browser API for different credential models
 
 ---
 
@@ -168,7 +168,7 @@ class: section-slide
 
 ```ts
 navigator.credentials.create()
-// creates a new credential
+// create a new credential
 
 navigator.credentials.get()
 // request a credential
@@ -192,7 +192,7 @@ navigator.credentials.preventSilentAccess()
 | Web Authentication | `PublicKeyCredential` | A signature from a private key |
 
 
-\* This feature is not Baseline because it does not work in some of the most widely-used browsers.
+\* This feature is not Baseline because it does not work in some of the most widely used browsers.
 ---
 
 # PasswordCredential
@@ -202,7 +202,7 @@ const credential = new PasswordCredential({
   id: "matteo@email.it",
   password: "123456",
   origin: "http://localhost:3000",
-  name: "My beautiful todo app" // optional
+  name: "My beautiful todo app", // optional
 });
 
 await navigator.credentials.store(credential)
@@ -236,7 +236,7 @@ const credential = await navigator.credentials.create({
   },
 })
 
-// credentials object
+// credential object
 {
   "authenticatorAttachment": "platform",
   "clientExtensionResults": {},
@@ -265,7 +265,7 @@ const credentials = await navigator.credentials.get({
   },
 });
 
-// send credentials.response to server and verify the authenticatorData
+// send credentials.response to the server and verify the authenticatorData
 ```
 ---
 
@@ -289,25 +289,25 @@ sequenceDiagram
   participant S as Server
   participant A as Authenticator
 
-  C->>S: asks for registration options
-  S->>S: creates challenge
+  C->>S: request registration options
+  S->>S: create challenge
   S-->>C: challenge, rp, user, algorithms
   C->>A: navigator.credentials.create()
   A-->>C: attestation + public key
   C->>S: WebAuthn response
-  S->>S: verifies challenge, origin, rpId
-  S->>S: stores credential id + public key
+  S->>S: verify challenge, origin, rpId
+  S->>S: store credential id + public key
 ```
 
 ---
 
 # What the server stores
 
-- user id
-- credential id
-- public key
-- algorithm
-- transports
+- User ID
+- Credential ID
+- Public key
+- Algorithm
+- Transports
 
 The private key remains with the authenticator or passkey provider.
 
@@ -321,13 +321,13 @@ sequenceDiagram
   participant S as Server
   participant A as Authenticator
 
-  C->>S: asks for login options
-  S->>S: creates fresh challenge
+  C->>S: request login options
+  S->>S: create fresh challenge
   S-->>C: challenge, rpId
   C->>A: navigator.credentials.get()
   A-->>C: signed assertion
   C->>S: WebAuthn response
-  S->>S: verifies challenge, origin, rpId, signature
+  S->>S: verify challenge, origin, rpId, signature
   S-->>C: session
 ```
 
@@ -344,7 +344,7 @@ class: section-slide
 
 # Authenticators
 
-## What can hold and use the key
+## What can hold and use keys
 
 ---
 
@@ -448,8 +448,8 @@ class: section-slide
 - **Device access:** Some users lack updated or personal devices.
 - **Enterprise controls:** Managed environments may restrict authenticators or sync providers.
 - **Recovery:** Weak recovery can erase the security gain.
-- **Fallback:** Password fallback must not become the attacker path.
-- **Transferability**: Passkeys are often locked into personal account/devices and they are less portable than passwords.
+- **Fallback:** Password fallback must not become the attacker's path.
+- **Transferability:** Passkeys are often tied to personal accounts or devices, and they are less portable than passwords.
 
 ---
 layout: center
