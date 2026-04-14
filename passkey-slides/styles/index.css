@@ -1,0 +1,452 @@
+:root {
+  --deck-ink: #192124;
+  --deck-muted: #5f6b70;
+  --deck-line: #d8e0dd;
+  --deck-panel: #f6faf8;
+  --deck-panel-strong: #eaf5f1;
+  --deck-accent: #0d8b7f;
+  --deck-accent-2: #d94f45;
+  --deck-accent-3: #e7ae35;
+}
+
+.slidev-layout {
+  color: var(--deck-ink);
+  background:
+    linear-gradient(135deg, rgba(13, 139, 127, 0.08), transparent 34%),
+    linear-gradient(315deg, rgba(217, 79, 69, 0.08), transparent 38%),
+    #fbfdfc;
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  letter-spacing: 0;
+}
+
+.slidev-layout h1 {
+  color: var(--deck-ink);
+  font-weight: 760;
+}
+
+.slidev-layout h2 {
+  color: var(--deck-muted);
+  font-weight: 520;
+}
+
+.slidev-layout code {
+  color: #0b6f68;
+  background: rgba(13, 139, 127, 0.1);
+  border: 1px solid rgba(13, 139, 127, 0.18);
+  border-radius: 6px;
+  padding: 0.1em 0.28em;
+}
+
+.slidev-layout pre code {
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.cover-slide,
+.slidev-page-1 .slidev-layout,
+.section-slide,
+.thesis-slide,
+.sharp-slide,
+.takeaway-slide,
+.end-slide {
+  text-align: left;
+}
+
+.slidev-page-1 .slidev-layout {
+  color: var(--deck-ink) !important;
+  text-align: left;
+  background:
+    linear-gradient(135deg, rgba(13, 139, 127, 0.14), transparent 40%),
+    linear-gradient(315deg, rgba(217, 79, 69, 0.12), transparent 42%),
+    linear-gradient(180deg, #fbfdfc, #f3f8f6) !important;
+}
+
+.cover-slide h1,
+.slidev-page-1 .slidev-layout h1 {
+  font-size: 4.8rem;
+  line-height: 0.95;
+  margin-bottom: 0.8rem;
+}
+
+.cover-slide h2,
+.slidev-page-1 .slidev-layout h2 {
+  max-width: 760px;
+  color: var(--deck-accent);
+}
+
+.cover-meta {
+  margin-top: 2.4rem;
+  color: var(--deck-muted);
+  font-size: 1.15rem;
+  border-left: 6px solid var(--deck-accent-3);
+  padding-left: 1rem;
+}
+
+.section-slide {
+  background:
+    linear-gradient(110deg, rgba(13, 139, 127, 0.16), transparent 50%),
+    linear-gradient(290deg, rgba(231, 174, 53, 0.18), transparent 55%),
+    #f8fbfa;
+}
+
+.section-slide h1 {
+  font-size: 4.2rem;
+}
+
+.section-slide h2 {
+  color: var(--deck-accent);
+}
+
+.thesis-slide h1,
+.sharp-slide h1,
+.takeaway-slide h1 {
+  max-width: 920px;
+  font-size: 3rem;
+  line-height: 1.12;
+}
+
+.sharp-slide p,
+.takeaway-slide p {
+  max-width: 760px;
+  color: var(--deck-muted);
+  font-size: 1.35rem;
+}
+
+.thread,
+.risk-grid,
+.metric-grid,
+.model-grid,
+.api-grid,
+.store-grid,
+.proof-chain,
+.demo-grid,
+.check-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.thread {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.thread > div,
+.risk-grid > div,
+.metric-grid > div,
+.model-grid > div,
+.api-grid > div,
+.stack > div,
+.store-grid > div,
+.proof-chain > div,
+.demo-grid > div,
+.check-grid > div,
+.two-panel > div {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid var(--deck-line);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(25, 33, 36, 0.06);
+}
+
+.thread span {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--deck-accent);
+  color: white;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.thread strong,
+.risk-grid strong,
+.model-grid strong,
+.stack strong,
+.proof-chain strong,
+.demo-grid strong {
+  display: block;
+  color: var(--deck-ink);
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.thread p,
+.risk-grid span,
+.model-grid span,
+.api-grid span,
+.stack span,
+.proof-chain span,
+.demo-grid span {
+  color: var(--deck-muted);
+}
+
+.callout {
+  border-left: 6px solid var(--deck-accent-2);
+  background: rgba(217, 79, 69, 0.08);
+  padding: 1rem 1.15rem;
+  border-radius: 8px;
+  font-size: 1.22rem;
+  margin-bottom: 1.2rem;
+}
+
+.risk-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metric-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.metric-grid strong {
+  display: block;
+  color: var(--deck-accent-2);
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 0.8rem;
+}
+
+.metric-grid span {
+  color: var(--deck-muted);
+  font-size: 1.05rem;
+}
+
+.two-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.two-panel h2 {
+  color: var(--deck-accent);
+  margin-bottom: 1rem;
+}
+
+.two-panel p {
+  color: var(--deck-muted);
+  margin-bottom: 0.65rem;
+}
+
+.two-panel.compact p {
+  font-size: 1.05rem;
+}
+
+.model-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+.api-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 1.5rem;
+}
+
+.api-grid code {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--deck-line);
+  border-radius: 8px;
+}
+
+th {
+  color: var(--deck-ink);
+  background: var(--deck-panel-strong);
+}
+
+td,
+th {
+  border-bottom: 1px solid var(--deck-line);
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+.never-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.never-grid div {
+  border: 2px solid rgba(217, 79, 69, 0.5);
+  color: var(--deck-accent-2);
+  background: rgba(217, 79, 69, 0.08);
+  border-radius: 8px;
+  padding: 1.4rem;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 760;
+}
+
+.store-grid,
+.check-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.store-grid > div,
+.check-grid > div {
+  min-height: 5rem;
+  display: flex;
+  align-items: center;
+  color: var(--deck-ink);
+}
+
+.proof-chain,
+.demo-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.demo-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1.4rem 0;
+}
+
+small {
+  color: var(--deck-muted);
+}
+
+.slidev-layout .mermaid {
+  display: flex;
+  justify-content: center;
+  max-height: 430px;
+  overflow: hidden;
+}
+
+.slidev-layout .mermaid svg {
+  max-width: 100%;
+  max-height: 430px;
+}
+
+/* ── Statement slides: red / teal contrast for password vs passkey ────── */
+.thesis-slide h1:first-of-type,
+.thesis-slide h1.red,
+.takeaway-slide h1:first-of-type {
+  border-left: 5px solid var(--deck-accent-2);
+  padding-left: 1.2rem;
+  color: #b83d35;
+}
+
+.thesis-slide h1 + h1,
+.thesis-slide h1.green,
+.takeaway-slide h1 + h1 {
+  border-left: 5px solid var(--deck-accent);
+  padding-left: 1.2rem;
+  color: #0a7068;
+  margin-top: 1.8rem;
+}
+
+/* ── Check grid: checkmark indicators ────────────────────────────────── */
+.check-grid > div {
+  position: relative;
+  padding-left: 2.8rem;
+}
+
+.check-grid > div::before {
+  content: '✓';
+  position: absolute;
+  left: 1rem;
+  color: var(--deck-accent);
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+/* ── Never grid: ✕ indicators ────────────────────────────────────────── */
+.never-grid div {
+  font-size: 1.45rem;
+  letter-spacing: 0.01em;
+}
+
+.never-grid div::before {
+  content: '✕ ';
+  font-weight: 900;
+  opacity: 0.7;
+}
+
+/* ── Proof chain: sequential step numbers ────────────────────────────── */
+.proof-chain {
+  counter-reset: proof-step;
+}
+
+.proof-chain > div {
+  counter-increment: proof-step;
+  padding-top: 2.6rem;
+  position: relative;
+}
+
+.proof-chain > div::before {
+  content: counter(proof-step);
+  position: absolute;
+  top: 0.75rem;
+  left: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background: var(--deck-accent);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+
+/* ── Section slide: left accent on subtitle ──────────────────────────── */
+.section-slide h2 {
+  border-left: 4px solid var(--deck-accent);
+  padding-left: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* ── Table: comfortable cell padding ─────────────────────────────────── */
+td,
+th {
+  padding: 0.55rem 1rem;
+}
+
+/* ── End slide: centered, impactful ──────────────────────────────────── */
+.end-slide {
+  background:
+    linear-gradient(145deg, rgba(13, 139, 127, 0.2), transparent 55%),
+    linear-gradient(325deg, rgba(217, 79, 69, 0.14), transparent 50%),
+    #f4f9f7 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.end-slide h1 {
+  font-size: 5rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--deck-ink);
+}
+
+.end-slide h2 {
+  color: var(--deck-accent);
+  font-size: 2rem;
+  font-weight: 480;
+  margin-top: 1.4rem;
+}

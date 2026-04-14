@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo passkey</title>
+    <script type="module" src="/src/passkey-demo.ts"></script>
+  </head>
+  <body>
+    <main id="passkey-demo">
+      <section class="app-pane" aria-label="Frontend applicazione">
+        <header class="app-header">
+          <div>
+            <p class="eyebrow">Frontend</p>
+            <h1>Accesso con passkey</h1>
+          </div>
+          <img
+            src="/src/assets/hero.png"
+            alt=""
+            width="343"
+            height="361"
+            class="header-visual"
+          />
+        </header>
+
+        <form id="account-form" class="auth-surface">
+          <label for="username">Account</label>
+          <input
+            id="username"
+            name="username"
+            autocomplete="username webauthn"
+            value="ada@example.test"
+            required
+          />
+
+          <div class="actions">
+            <button type="button" id="register-button">Registra passkey</button>
+            <button type="button" id="login-button">Login</button>
+            <button type="button" id="logout-button">Logout</button>
+          </div>
+        </form>
+
+        <section class="app-status" aria-live="polite">
+          <h2>Stato applicazione</h2>
+          <dl>
+            <div>
+              <dt>Sessione</dt>
+              <dd id="session-state">Non autenticato</dd>
+            </div>
+            <div>
+              <dt>Credenziale</dt>
+              <dd id="credential-state">Nessuna passkey registrata</dd>
+            </div>
+            <div>
+              <dt>Challenge attive</dt>
+              <dd id="challenge-state">0</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="explainer">
+          <h2>Flusso simulato</h2>
+          <ol>
+            <li>Il frontend chiede al server una challenge.</li>
+            <li>Il browser parla con l'autenticatore tramite WebAuthn.</li>
+            <li>Il server salva la public key in registrazione.</li>
+            <li>Al login il server verifica una firma, non una password.</li>
+          </ol>
+        </section>
+      </section>
+
+      <section class="server-pane" aria-label="Log web server simulato">
+        <header class="server-header">
+          <div>
+            <p class="eyebrow">Web server simulato</p>
+            <h2>Challenge, public key e sessione</h2>
+          </div>
+          <button type="button" id="clear-log-button">Pulisci log</button>
+        </header>
+
+        <div class="server-state">
+          <h3>Memoria server</h3>
+          <pre id="server-memory">Inizializzazione...</pre>
+        </div>
+
+        <div class="server-log">
+          <h3>Log</h3>
+          <pre id="server-log">Inizializzazione...</pre>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
