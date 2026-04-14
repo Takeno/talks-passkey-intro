@@ -214,9 +214,10 @@ const saved = await navigator.credentials.get({
 
 ---
 layout: statement
+class: section-slide
 ---
 
-# Demo: PasswordCredential
+# PasswordCredential demo
 
 ---
 layout: section
@@ -333,9 +334,10 @@ sequenceDiagram
 
 ---
 layout: statement
+class: section-slide
 ---
 
-# Demo: Passkey
+# Passkey demo
 
 ---
 layout: section
