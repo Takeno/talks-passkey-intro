@@ -39,7 +39,7 @@ jobs:
 
       - name: Build
         working-directory: passkey-slides
-        run: pnpm run build -- --base /talks-passkey-intro/
+        run: pnpm exec slidev build --base /talks-passkey-intro/
 
       - uses: actions/configure-pages@v4
 

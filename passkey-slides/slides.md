@@ -7,7 +7,6 @@ drawings:
 transition: slide-left
 comark: true
 duration: 35min
-base: /talks-passkey-intro/
 ---
 
 # Passkeys
