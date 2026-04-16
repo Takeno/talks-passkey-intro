@@ -31,15 +31,28 @@ jobs:
         with:
           node-version: 'lts/*'
           cache: pnpm
-          cache-dependency-path: passkey-slides/pnpm-lock.yaml
+          cache-dependency-path: |
+            passkey-slides/pnpm-lock.yaml
+            passkey-demo/pnpm-lock.yaml
 
-      - name: Install
+      - name: Install slides
         working-directory: passkey-slides
         run: pnpm install
 
-      - name: Build
+      - name: Build slides
         working-directory: passkey-slides
         run: pnpm exec slidev build --base /talks-passkey-intro/
+
+      - name: Install demo
+        working-directory: passkey-demo
+        run: pnpm install
+
+      - name: Build demo
+        working-directory: passkey-demo
+        run: pnpm exec vite build --base /talks-passkey-intro/demo/
+
+      - name: Merge demo into slides dist
+        run: mv passkey-demo/dist passkey-slides/dist/demo
 
       - uses: actions/configure-pages@v4
 
