@@ -473,3 +473,4 @@ class: end-slide
 - [W3C WebAuthn Level 3](https://www.w3.org/TR/webauthn-3/)
 - [MDN Credential Management API](https://developer.mozilla.org/en-US/docs/Web/API/Credential_Management_API)
 - [MDN Web Authentication API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
+- [WebAuthn Guide](https://webauthn.guide/)
